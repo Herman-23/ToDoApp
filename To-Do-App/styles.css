@@ -1,69 +1,104 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to left, #6DD5FA, #ff3535);
-    color: #333;
+    background: linear-gradient(#0f0c29, #302b63, #24243e);
+    color: #fff;
+    overflow: hidden;
 }
 
 #todoapp {
-    max-width: 80%;
+    max-width: 85%;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Target anything in todoform that has an input of type text */
+h1 {
+    font-size: 3rem;
+    color: #f7f7f7;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+}
+
 #todoform input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
+    width: 65%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
     margin-right: 10px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #f7f7f7;
+    backdrop-filter: blur(10px);
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+#todoform input[type="text"]::placeholder {
+    color: #bbb;
+}
+
+#todoform input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
 }
 
 #todoform button {
-    padding: 10px 20px;
-    background-color: #5F9EA0;
+    padding: 15px 30px;
+    background-color: #06beb6;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px;
     cursor: pointer;
-    /* Upon hover, color transitions */
-    transition: background-color 0.3s;
+    margin-top: 5px;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #todoform button:hover {
-    background-color: #4682B4;
+    background-color: #48b1bf;
 }
 
 #todolist {
     list-style: none;
     padding: 0;
+    margin-top: 30px;
 }
 
 #todolist li {
-    background-color: #f9f9f9;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.2rem;
+    color: #f7f7f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#todolist li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
 }
 
 /* Media queries for each device type */
 /* Medium devices (desktops, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     #todoapp {
-        max-width: 75%;
-        padding: 20px;
+        max-width: 70%;
+        padding: 40px;
     }
 
     #todoform input[type="text"] {
@@ -71,19 +106,19 @@ body {
     }
 
     #todoform button {
-        padding: 10px 20px;
+        padding: 15px 30px;
     }
 
     #todolist li {
-        padding: 10px;
+        padding: 15px;
     }
 }
 
 /* Large devices (large desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     #todoapp {
-        max-width: 70%;
-        padding: 25px;
+        max-width: 65%;
+        padding: 45px;
     }
 
     #todoform input[type="text"] {
@@ -91,11 +126,11 @@ body {
     }
 
     #todoform button {
-        padding: 12px 24px;
+        padding: 16px 32px;
     }
 
     #todolist li {
-        padding: 12px;
+        padding: 16px;
     }
 }
 
@@ -103,7 +138,7 @@ body {
 @media (min-width: 1200px) {
     #todoapp {
         max-width: 60%;
-        padding: 30px;
+        padding: 50px;
     }
 
     #todoform input[type="text"] {
@@ -111,10 +146,10 @@ body {
     }
 
     #todoform button {
-        padding: 14px 28px;
+        padding: 18px 36px;
     }
 
     #todolist li {
-        padding: 14px;
+        padding: 18px;
     }
 }
