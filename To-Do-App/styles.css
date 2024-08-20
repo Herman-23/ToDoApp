@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to left, #6DD5FA, #ff3535);
+    color: #333;
+}
+
+#todoapp {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Target anything in todoform that has an input of type text */
+#todoform input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#todoform button {
+    padding: 10px 20px;
+    background-color: #5F9EA0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Upon hover, color transitions */
+    transition: background-color 0.3s;
+}
+
+#todoform button:hover {
+    background-color: #4682B4;
+}
+
+#todolist {
+    list-style: none;
+    padding: 0;
+}
+
+#todolist li {
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Media queries for each device type */
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #todoapp {
+        max-width: 75%;
+        padding: 20px;
+    }
+
+    #todoform input[type="text"] {
+        width: 70%;
+    }
+
+    #todoform button {
+        padding: 10px 20px;
+    }
+
+    #todolist li {
+        padding: 10px;
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    #todoapp {
+        max-width: 70%;
+        padding: 25px;
+    }
+
+    #todoform input[type="text"] {
+        width: 75%;
+    }
+
+    #todoform button {
+        padding: 12px 24px;
+    }
+
+    #todolist li {
+        padding: 12px;
+    }
+}
+
+/* Extra large devices (extra large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #todoapp {
+        max-width: 60%;
+        padding: 30px;
+    }
+
+    #todoform input[type="text"] {
+        width: 80%;
+    }
+
+    #todoform button {
+        padding: 14px 28px;
+    }
+
+    #todolist li {
+        padding: 14px;
+    }
+}
