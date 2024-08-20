@@ -7,7 +7,7 @@ todoForm.addEventListener('submit', function(event){
     const newTask = todoInput.value;
 
     if (newTask === '') {
-        alert('Please enter a task!')
+        alert('Please enter a task!');
         return;
     }
 
@@ -30,11 +30,11 @@ function addTask(task) {
     deleteButton.textContent = 'Delete';
     listItem.appendChild(deleteButton);
 
-    todoList.appendChild(listItem);
-
     const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
     listItem.appendChild(editButton);
+
+    todoList.appendChild(listItem);
 
     // Event listeners for the checkbox and delete button added here
     checkBox.addEventListener('change', function(){
@@ -46,7 +46,7 @@ function addTask(task) {
     });
 
     deleteButton.addEventListener('click', function() {
-        todoList.remove(listItem);
+        todoList.removeChild(listItem);
     });
 
     editButton.addEventListener('click', function() {
@@ -54,7 +54,10 @@ function addTask(task) {
       
         if (isEditing) {
             // Switch back to view mode
-            taskText.textContent = this.previousSibling.value; // Assuming the input field is right before the edit button
+            const input = listItem.querySelector('input[type="text"]');
+            taskText.textContent = input.value;
+            listItem.insertBefore(taskText, input);
+            listItem.removeChild(input);
             listItem.classList.remove('editing');
             editButton.textContent = 'Edit';
         } else {
@@ -67,6 +70,5 @@ function addTask(task) {
             listItem.classList.add('editing');
             editButton.textContent = 'Save';
         }
-      });
-    
+    });
 }
